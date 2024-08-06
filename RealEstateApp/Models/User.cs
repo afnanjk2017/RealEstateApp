@@ -8,12 +8,10 @@ namespace RealEstateApp.Models
     {
 
         [Required]
-        public string FName { get; set; }
+        public string Name { get; set; }
 
-        public string? MName { get; set; }
-
-        public string? LName { get; set; }
-
+       
+       
         [Required]
         [EmailAddress]
         public string Email { get; set; }

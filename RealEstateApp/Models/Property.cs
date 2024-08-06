@@ -14,9 +14,9 @@ namespace RealEstateApp.Models
         public string Title { get; set; }
 
         [Required]
-        public string Availability { get; set; }
+        public bool Available { get; set; }
 
-
+        public string status { get; set; }
         public decimal AreaMeters { get; set; }
 
         public int Property_Type_id { get; set; }
