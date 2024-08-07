@@ -1,0 +1,319 @@
+﻿@import "home.css";
+@import "add.css";
+@import "view.css";
+@Import "sign.css";
+@import "pricing.css";
+
+
+@font-face {
+    font-family: 'Bold';
+    src: url(../Fonts/FFSHAMELSANS-BOLD\ 1.OTF);
+}
+
+@font-face {
+    font-family: 'Medium';
+    src: url(../Fonts/FFSHAMELSANS-MEDIUM\ 1.OTF);
+}
+
+@font-face {
+    font-family: 'Normal';
+    src: url(../Fonts/FFShamelSans-Normal.otf);
+}
+
+@font-face {
+    font-family: 'Logo';
+    src: url(../Fonts/Poppins-Bold.ttf);
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* primary button */
+.button {
+    background-color: transparent;
+    width: 186px;
+    height: 48px;
+    border: 1px solid rgba(131, 75, 255, 0.4);
+    border-radius: 12px;
+    color: #834BFF;
+    font-family: "Bold";
+    font-size: 16px;
+    align-self: center;
+    top: 0px;
+}
+
+/* secondary button */
+.button2 {
+    background-color: #834BFF;
+    border-radius: 12px;
+    margin-left: 10px;
+    width: 186px;
+    height: 48px;
+    /* Text */
+    color: #fff;
+    font-family: "Bold";
+    font-size: 16px;
+    align-self: center;
+    border: 0;
+}
+
+
+
+
+
+/* Header */
+header {
+    font-family: 'Medium';
+    padding-top: 48px;
+}
+
+    header .logo img {
+        margin-top: -5px;
+        margin-left: 5px;
+    }
+
+    header .logo a {
+        font-size: 24px;
+        color: #000000;
+        font-family: 'Bold';
+        margin-top: -5px;
+    }
+
+
+    header nav a.active-link {
+        color: #0C0C1D;
+        font-family: 'Bold';
+    }
+
+.menu-Text {
+    font-size: 18px;
+    font-weight: bolder;
+    color: #9E9EA5;
+}
+
+.create-acc {
+    /* button */
+    background-color: transparent;
+    padding: 14px 15px;
+    border: 1px solid rgba(131, 75, 255, 0.4);
+    border-radius: 12px;
+    /* Text */
+    color: #834BFF;
+    font-weight: 700;
+    font-size: 14px;
+    align-self: center;
+    top: 10px;
+    display: inline-block;
+}
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+/* footer */
+
+
+
+.up {
+    background-color: #0C0C1D;
+    display: block;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+}
+
+.mail-list {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -100px;
+    width: 1200px;
+    background-color: #834BFF;
+    border-radius: 24px;
+    padding: 72px;
+    z-index: 10;
+    text-align: center;
+}
+
+h2.mail-list-head {
+    font-family: "bold";
+    margin-bottom: 20px;
+    color: white;
+}
+
+p.mail-list-details {
+    color: #CDB7FF;
+    font-size: 18px;
+    font-family: Normal;
+}
+
+
+.mail-list-action input {
+    position: relative;
+    border: 0;
+    width: 360px;
+    height: 50px;
+    border-radius: 24px;
+    background-color: #9768FF;
+    border: 0px;
+    padding-right: 20px;
+    padding-left: 190px;
+    z-index: 1;
+}
+
+    .mail-list-action input::placeholder {
+        color: white;
+    }
+
+.mail-list-action button {
+    position: relative;
+    width: 105px;
+    height: 40px;
+    border: none;
+    border-radius: 24px;
+    background-color: white;
+    color: #1E1E20;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Medium';
+    margin-right: -115px;
+    z-index: 999;
+}
+
+
+
+.contact-info {
+    width: 100%;
+    padding-top: 56px;
+    text-align: right;
+    background-color: white;
+}
+
+.first,
+.second,
+.third,
+.forth {
+    display: flex;
+    font-weight: 900;
+    flex-direction: column;
+    align-items: flex-end;
+    width: auto;
+    gap: 20px;
+    font-size: 16px;
+}
+
+
+
+.AM-des {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: right;
+    margin-top: 10px;
+    font-size: 24;
+    font-family: 'Bold';
+}
+
+    .AM-des a {
+        color: #000000;
+        margin-right: 5px;
+    }
+
+.AM-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+
+p.AM-des-details {
+    font-size: 16px;
+    color: #999999;
+    text-align: right;
+    font-weight: 100;
+    font-family: 'Medium';
+    margin-left: -85px;
+}
+
+h2.AM-pages {
+    font-size: 16px;
+    color: #6F6F70;
+    margin-top: 10px;
+    font-family: 'Bold';
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+
+.listing ul {
+    list-style: none;
+    font-size: 16px;
+    font-weight: 100;
+    color: #999999;
+    margin-top: 1px;
+    text-align: right;
+    font-style: normal;
+    font-family: 'Medium';
+    padding: 0;
+    margin: 0;
+}
+
+    .listing ul li {
+        margin-bottom: 8px;
+        margin-left: -8px;
+    }
+
+/* to keep the مواقع تهمك and the list at the same start  */
+.listing .listing-arr ul {
+    margin-left: -50px;
+}
+
+.listing ul li a {
+    color: 2370FF;
+    text-decoration: underline;
+}
+
+.contact img {
+    width: auto;
+    height: 25px;
+    border: 2px solid white;
+}
+
+.end-page {
+    font-size: 16px;
+    font-family: 'Normal';
+    margin-top: 126px;
+    color: #A5A5A6;
+}
+
+
+.legal ul {
+    list-style: none;
+    margin-right: -370px;
+}
+
+    .legal ul li {
+        display: inline-block;
+        text-decoration: underline;
+        margin-left: 15px;
+    }
+
+        .legal ul li a {
+            color: #A5A5A6;
+        }
+
+
+/* media  */
+

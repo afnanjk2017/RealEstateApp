@@ -1,0 +1,92 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+ <!-- Header Section -->
+    <div class="signHeader">
+        <img class="Logo" src="~/Images/logoText.svg">
+    <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">
+            <button class="button signButton">تسجيل دخول</button>
+        </a>
+    </div>
+    <!-- Content horizantal -->
+    <div class="form-container">
+        <!-- Inputs -->
+        <div class="registrationForm">
+            <h1 class="title">
+                تسجيل حساب جديد
+            </h1>
+        <form id ="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <!-- Name -->
+            <label asp-for="Input.UserName" class="fieldLabel" id="nameLabel"> الاسم<a class="required-star"> *</a></label>
+                <div class="form-floating">
+                <input asp-for="Input.UserName" type="text" id="userName" class="form-input" placeholder="الاسم">
+                <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                </div>
+                <!-- email -->
+            <label asp-for="Input.Email" class="fieldLabel" id="emailLabel"> البريد الالكتروني<a class="required-star"> *</a></label>
+                <div class="form-floating mb-3">
+                <input asp-for="Input.Email" type="email" id="emailField" class="form-input" placeholder="Example@gmail.com">
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <!-- Phone -->
+            <label asp-for="Input.PhoneNumber"  class="fieldLabel" id="phoneLabel"> رقم الجوال<a class="required-star"> *</a></label>
+                <div class="form-floating mb-3" dir="ltr">
+                <input asp-for="Input.PhoneNumber"  type="phone" id="phoneField" class="form-input" placeholder="+966 5xxxxxxxx">
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                </div>
+                <!-- Password -->
+            <label asp-for ="Input.Password" class="fieldLabel" id="phoneLabel"> كلمة المرور<a class="required-star"> *</a></label>
+                <div class="form-floating mb-3">
+                <input asp-for="Input.Password" type="password" id="passwordField" class="form-input password" placeholder="**********">
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    <i class="eyeIcon" id="togglePassword"></i>
+                </div>
+                <!-- Confirm Password -->
+            <label asp-for="Input.ConfirmPassword" class="fieldLabel" id="phoneLabel"> تاكيد كلمة المرور<a class="required-star"> *</a></label>
+                <div class="form-floating mb-3">
+                <input asp-for="Input.ConfirmPassword" type="password" id="passwordConfrimField" class="form-input" placeholder="**********">
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    <i class="eyeIcon" id="toggleConfirmPassword"></i>
+                </div>
+                <!-- Terms and condition checkbox -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="termsCheck">
+                    <label for="termsCheck">الموافقة على <a class="link" href="#">الشروط والأحكام</a></label>
+                </div>
+                <div class="buttonGroup">
+                <button id="registerSubmit" type="submit" class="button2">تسجيل</button>
+                <a asp-controller="Home" asp-action="Index">
+                        <button type="button" id="return" class="button">رجوع</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+        <!-- Image -->
+        <div class="imageContainer">
+            <img src="~/Images/TowersVisual.png" class="imageOverlay">
+        </div>
+    </div>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
+        const password = document.querySelector('#passwordField');
+        const confirmPassword = document.querySelector('#passwordConfrimField');
+        togglePassword.addEventListener('click', () => {
+            toggleFieldVisibility(password);
+        });
+        toggleConfirmPassword.addEventListener('click', () => {
+            toggleFieldVisibility(confirmPassword);
+        });
+        function toggleFieldVisibility(field) {
+            const type = field.getAttribute('type') === 'password' ? 'text' : 'password';
+            field.setAttribute('type', type);
+        }
+    </script>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

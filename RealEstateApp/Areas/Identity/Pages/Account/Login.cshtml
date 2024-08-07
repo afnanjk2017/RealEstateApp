@@ -1,0 +1,63 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+ <!-- Header Section -->
+    <div class="signHeader">
+        <img class="Logo" src="~/Images/logoText.svg">
+       
+        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">
+            <button class="button signButton ms-3">تسجيل حساب</button>
+        </a>
+    </div>
+    <!-- Content horizantal -->
+    <div class="form-container">
+        <!-- Inputs -->
+        <div class="registrationForm">
+            <h1 class="title">
+                تسجيل الدخول </h1>
+        <form dir="rtl" id="account" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <!-- email -->
+            <label class="fieldLabel" asp-for="Input.Email" id="emailLabel"> البريد الالكتروني<a class="required-star"> *</a></label>
+                <div class="form-floating mb-3">
+                <input asp-for="Input.Email" type="email" id="emailField" class="form-input" placeholder="Example@gmail.com">
+                </div>
+                <!-- Password -->
+            <label class="fieldLabel" asp-for="Input.Password" id="phoneLabel"> كلمة المرور<a class="required-star"> *</a></label>
+                <div class="form-floating mb-3">
+                <input asp-for="Input.Password" type="password" id="passwordField" class="form-input password" placeholder="**********">
+                    <i class="eyeIcon" id="togglePassword"></i>
+                </div>
+                <div class="buttonGroup">
+                <button  id="login-submit" type="submit" class="button2">تسجيل دخول</button>
+                <a asp-controller="Home" asp-action="Index">
+                        <button type="button" id="return" class="button">رجوع</button>
+                    </a>
+                    </div>
+        </form>
+        </div>
+        <!-- Image -->
+        <div class="imageContainer">
+            <img src="~/Images/TowersVisual.png" class="imageOverlay">
+        </div>
+    </div>
+
+    
+    <script>
+        const togglePassword = document.querySelector('#togglePassword'); const password = document.querySelector('#passwordField');
+        togglePassword.addEventListener('click', () => {
+            toggleFieldVisibility(password);
+        });
+        function toggleFieldVisibility(field) {
+            const type = field.getAttribute('type') === 'password' ? 'text' : 'password';
+            field.setAttribute('type', type);
+        }
+    </script>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

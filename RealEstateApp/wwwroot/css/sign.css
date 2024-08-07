@@ -1,0 +1,125 @@
+
+
+.signPage {
+    background-color: #fff;
+}
+
+.signHeader {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Logo {
+    width: 117px;
+    height: 38px;
+}
+
+.buttonGroup{
+    display:flex;
+}
+
+.signButton {
+    position: relative;
+    left: 20px;
+}
+
+.title {
+    font-family: "Bold";
+    font-size: 36px;
+    padding-right: 0px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    width: max-content;
+}
+
+.eyeIcon {
+    background: url('../Images/eye-closed.svg');
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    z-index: 2;
+    top: 14px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.form-floating {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.fieldLabel {
+    font-family: 'Normal';
+    color: #000;
+}
+
+.form-check {
+    font-family: 'Normal';
+    font-size: 16px;
+    color: #323539;
+    margin-bottom: 20px;
+}
+
+.form-check-input:checked {
+    background-color: #834BFF;
+    border-color: #834BFF;
+}
+
+.link {
+    color: #2370FF;
+    text-decoration: underline;
+}
+
+.form-container {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .registrationForm {
+        z-index: 1;
+    }
+
+    .imageContainer {
+        position: absolute;
+        opacity: 0.1;
+    }
+}
+
+
+.form-input {
+    border-radius: 12px;
+    padding: 20px;
+    height: 48px;
+    width: 100%;
+    border: 0.5px solid #B6B6C8;
+}
+
+input:focus{
+    outline: 2px solid #834BFF; 
+  }
+
+.required-star {
+    display: none; 
+    /* it is hidden now because the UI Design changed */
+    color:#ff0000;
+}
+
+.imageOverlay {
+    width: 100%;
+    mask: radial-gradient(circle at 50% 50%, #fff 50%, transparent 70%);
+    -webkit-mask: radial-gradient(circle at 50% 50%, #fff 30%, transparent 70%);
+}
+
+.registrationForm {
+    align-self: flex-start;
+    min-width: 300px;
+    width: 50%;
+}
+
+

@@ -2,7 +2,208 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<main>
+    <!-- row 1  -->
+    <!-- First section -->
+    <div class="container">
+        <div class="heading-area">
+            <h1>
+                إيجاد منزل أحلامك
+                <br>
+                أصبح أسهل
+            </h1>
+            <p>
+                ابحث عن منزلك المثالي للبيع أو الإيجار مع أكبر قاعدة
+                <br>
+                بيانات
+                للعقارات في المنطقة
+            </p>
+            <button class="button2">الإطلاع على العقارات</button>
+        </div>
+    </div>
+
+
+    <!-- row 2  -->
+    <!-- second section -->
+    <div class="container">
+
+        <div class="row custom-margin-top">
+            <div class="col-md-5">
+                <img src="~/Images/Building.png" alt="Building Icon">
+            </div>
+
+            <div class="col-md-7">
+                <div class="row ">
+                    <h1 class="h1-home">مجموعة واسعة من العقارات</h1>
+                    <p class="p-home">
+                        نعرض مجموعة متنوعة من العقارات السكنية والتجارية الفاخرة، تصميم موقعنا يسهل
+                        <br>
+                        عليك العثور على ما تبحث عنه بسرعة وسهولة ونوفر فريقنا مستعد للإجابة على
+                        <br>
+                        استفساراتك ومساعدتك في أي وقت
+                    </p>
+                </div>
+
+                <!-- row for cards  -->
+                <div class="row card-custom ">
+
+                    <!-- card 1 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="custom-card card1">
+                            <img src="~/Images/Home-icon.png" alt="Icon" class="icon-1">
+                            <p class="bottom-text T1"> محرك بحث عقاري جاهز لخدمتك</p>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="col-md-4 mb-4 ">
+                        <div class="custom-card card2-3">
+                            <img src="~/Images/$.png" alt="Icon" class="icon-1">
+                            <p class="bottom-text T2-3"> خدمات مابعد العقار</p>
+                        </div>
+                    </div>
+                    <!-- card 3 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="custom-card card2-3">
+                            <img src="~/Images/phone.png" alt="Icon" class="icon-1">
+                            <p class="bottom-text T2-3">دعم فني متقدم </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- row 3  -->
+    <!-- third section -->
+    <div class="container">
+        <div class="row custom-margin-top">
+            <div class="col-md-3">
+                <p class="available-listing-p">العقارات المتاحة</p>
+            </div>
+            <div class="col-md-2 button-margin-right">
+                <button class="B1">بيــــع</button>
+            </div>
+            <div class="col-md-2 button-margin-right">
+                <button class="B2">إيجـار</button>
+            </div>
+            <div class="col-md-4 offset-md-1">
+                <div class="input-container1">
+                    <input type="text" placeholder="ابحث عن المنطقة" class="text1">
+                    <img src="~/Images/Search.svg" alt="Search Icon" class="Search-icon">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="google-map2">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228822.11976020265!2d43.92342565!3d26.347680999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x157f586683817b77%3A0x5853c1dee3598a61!2z2KjYsdmK2K_YqQ!5e0!3m2!1sar!2ssa!4v1722637443615!5m2!1sar!2ssa "
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+
+
+    <!-- row 4 -->
+    <!-- 4th section -->
+    <div class="container">
+        <div class="row custom-margin-top justify-content-center">
+
+            <!-- card 1 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="~/Images/Card1.png" class="card-img " alt="photo">
+                    <button class="b-like"><img src="~/Images/like.svg" class="card-img-top" alt="like"></button>
+                    <div class="card-body">
+                        <h5 class="card-title">12.000 ريال</h5>
+                        <p class="card-text">شارع خالد بن الوليد، حي الصفراء، بريدة</p>
+                        <button class="card-button">الإطلاع على التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 2 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="~/Images/Card2.png" class="card-img " alt="photo">
+                    <button class="b-like"><img src="~/Images/like.svg" class="card-img-top " alt="like"></button>
+                    <div class="card-body">
+                        <h5 class="card-title">14.500 ريال</h5>
+                        <p class="card-text">شارع الملك فهد، حي الفايزية، بريدة</p>
+                        <button class="card-button">الإطلاع على التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 3 -->
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="~/Images/Card3.png" class="card-img " alt="photo">
+                    <button class="b-like"><img src="~/Images/like.svg" class="card-img-top " alt="like"></button>
+                    <div class="card-body">
+                        <h5 class="card-title">10.000 ريال</h5>
+                        <p class="card-text">شارع خالد بن الوليد، حي الصفراء، بريدة</p>
+                        <button class="card-button">الإطلاع على التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <!-- card 1 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="~/Images/Card4.png" class="card-img " alt="photo">
+                    <button class="b-like"><img src="~/Images/red-like.svg" alt="like"></button>
+                    <div class="card-body">
+                        <h5 class="card-title">12.000 ريال</h5>
+                        <p class="card-text">شارع أبو بكر الصديق، حي الصالحية، الرس</p>
+                        <button class="card-button">الإطلاع على التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 2 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="~/Images/Card5.png" class="card-img " alt="photo">
+                    <button class="b-like"><img src="~/Images/like.svg" class="card-img-top " alt="like"></button>
+                    <div class="card-body">
+                        <h5 class="card-title">16.545 ريال</h5>
+                        <p class="card-text">شارع الملك عبد العزيز، حي النهضة، بريدة </p>
+                        <button class="card-button">الإطلاع على التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 3 -->
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="~/Images/Card2.png" class="card-img " alt="photo">
+                    <button class="b-like"><img src="~/Images/like.svg" class="card-img-top " alt="like"></button>
+                    <div class="card-body">
+                        <h5 class="card-title">14.500 ريال</h5>
+                        <p class="card-text">شارع الملك فهد، حي الفايزية، بريدة</p>
+                        <button class="card-button">الإطلاع على التفاصيل</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- buttons to navigate -->
+        <div class="d-flex justify-content-center button-container2">
+            <button class="dark-button "> 1 </button>
+            <button class="light-button"> 2 </button>
+            <button class="light-button"> 3 </button>
+            <button class="light-button"> 4 </button>
+            <button class="light-button"> 5 </button>
+            <button class="light-button ">
+                <img src="~/Images/ArrowLeft.svg" alt="">
+            </button>
+        </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</main>

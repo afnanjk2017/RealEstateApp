@@ -1,0 +1,442 @@
+/* Header */
+
+
+.images-slider img{
+    width: 100%;
+}
+header {
+    font-family: 'Bold';
+    padding-top: 48px;
+}
+
+header .logo a {
+    font-size: 24px;
+    color: #000000;
+    font-family: 'Logo';
+}
+
+header .logo img {
+    width: 58px;
+}
+
+header nav a {
+    color: #9E9EA5;
+    margin-left: 40px;
+    font-size: 18px;
+}
+
+header nav a.active-link {
+    color: #0C0C1D;
+}
+
+.button1 {
+    /* button */
+    background-color: transparent;
+    padding: 14px 22px;
+    border: 1px solid rgba(131, 75, 255, 0.4);
+    border-radius: 32px;
+    /* Text */
+    color: #834BFF;
+    font-weight: 700;
+    font-size: 14px;
+    align-self: center;
+    top: 10px;
+    display: inline-block;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    /* padding-top: 5px; */
+}
+
+.logo-image {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: -15px;
+}
+
+.menu {
+    display: flex;
+    padding-top: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.menu-Text {
+    font-size: 18px;
+    font-weight: bolder;
+    color: #9E9EA5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Image Slider */
+
+.images-slider{
+    background: linear-gradient(90deg, #FFF 37.25%, rgba(204, 204, 204, 0.20) 96.46%);
+    padding-left:0 ;
+    padding-right: 0;
+    margin-top: 31px;
+    margin-bottom: 24px;
+
+
+} 
+
+
+.images{
+    margin-left: -2px ;
+    margin-top: 32px;
+}
+
+
+.images-slider ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  
+
+
+
+}
+
+.images-slider ul li{
+    display: inline-block;
+    list-style-type: none;
+    margin-left: -4px;
+    margin: 0 -2px;
+   
+}
+
+
+
+.img-fluid{
+
+    margin-top: 24px;
+}
+
+
+
+
+/* Arrows */
+
+.arrows{
+   
+    direction: ltr;
+    display: flex;
+    left:1000;
+    margin-bottom: 88px;
+    
+}
+
+
+.dark-button{
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #192252;
+    border:none;
+    margin-left: 24px;
+}
+
+
+.light-button {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #F4F4F4;
+    border:none;
+}
+
+.dark-button img, 
+.light-button  img{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    padding-left: 6px;
+    padding-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+
+/* Title and Price Sections */
+
+.title-section, .price-section{
+    padding-top: 56px;
+    padding-bottom: 16px;
+}
+
+
+
+
+
+.aqar-name{
+    font-family:'Bold';
+    font-size: 32px;
+    font-weight: 700;
+    display: inline-block;
+
+
+}
+
+.aqar-desc{
+    color: #0C0C1D;
+    text-align: right;
+    font-family: 'Normal';
+    font-size: 20px;
+    font-weight: 200;
+    line-height: normal;
+}
+
+.aqar-virtualTour{
+    color: #1C35F4;
+    font-family: 'Normal';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+
+}
+.aqar-price{
+    color: #794AFF;
+    text-align: right;
+    font-family: "Bold";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: inline-block;
+    
+    margin-left: -1200px;
+}
+
+
+/* Separator Line */
+
+hr{
+    width:1200px;
+}
+
+
+/* Property Description Title */
+
+.AqarDescTitle .container .row p{
+    padding-bottom: 24px;
+    padding-top: 24px;
+
+
+}
+ 
+/* Custom Rounded Corners */
+
+.custom-rounded{
+    border-radius: 12px;
+    background: #FAFAFA;
+   
+    
+}
+
+
+#border-right{
+    border-top-right-radius: 12px;
+}
+#border-left{
+border-top-left-radius: 12px;
+}
+
+/* Property Status Description */
+
+.property-status-desc{
+  
+    padding-left:-10px;
+    padding-right: auto;
+    margin-left: auto;
+    margin-right: auto;
+   
+    
+}
+
+/* Titles */
+.black-title{
+    color: #0C0C1D;
+   
+    font-family: 'Normal';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 160%; 
+}
+
+.grey-title{
+    color: #7C8B9D;
+    
+    font-family: "FF Shamel Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; 
+
+}
+
+/* Status Button */
+.status-button{
+    border-radius: 69px;
+    background: #E1FFE6;
+    border: none;
+    width: 108px;
+    height: 32px;
+    color:#00D52B;
+    font-size: 14px;
+   
+
+}
+/* Property Service Title */
+
+.aqar-service-title{
+    padding-top:32px ;
+    padding-bottom: 24px;
+}
+
+.service-image{
+    width: 38px;
+    height: 38px;
+}
+  
+/* Contact Info Title */
+
+.contact-info-title{
+    padding-top:32px ;
+    padding-bottom: 24px;
+
+
+}
+
+
+.contact-container{
+    height: 107px;
+}
+
+/* Title Style */
+
+.title-style{
+    color: #0C0C1D;
+    text-align: right;
+    font-family: 'Bold';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.24px;
+    
+}
+
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .row-cols-3.row-cols-lg-4 {
+        row-gap: 16px;
+    }
+
+    .row-cols-3 .col-md-3 {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+
+    .row-cols-lg-4 .col-md-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 992px) {
+    .images-slider ul li img {
+        max-width: 75px;
+    }
+
+    .aqar-name {
+        font-size: 20px;
+    }
+
+    .aqar-desc {
+        font-size: 14px;
+    }
+
+    .price-section {
+        font-size: 20px;
+    }
+
+    .title-style {
+        font-size: 20px;
+    }
+
+    .service-image {
+        width: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-section {
+        text-align: center;
+    }
+
+    .price-section {
+        text-align: center;
+    }
+
+    .AqarDesc .row .col-md-3,
+    .aqar-service .row .col-md-3,
+    .contact-info .row .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .row-cols-3.row-cols-lg-4 {
+        row-gap: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .title-section,
+    .price-section,
+    .AqarDescTitle .title-style,
+    .aqar-service-title .title-style,
+    .contact-info-title .title-style {
+        text-align: center;
+    }
+
+    .AqarDesc .row .col-md-3,
+    .aqar-service .row .col-md-3,
+    .contact-info .row .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .row-cols-3.row-cols-lg-4 {
+        row-gap: 8px;
+    }
+
+    .service-image {
+        width: 30px;
+    }
+}
