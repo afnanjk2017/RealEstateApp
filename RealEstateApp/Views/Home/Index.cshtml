@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    int c = 0;
 }
 
 <main>
@@ -108,84 +109,33 @@
     <!-- 4th section -->
     <div class="container">
         <div class="row custom-margin-top justify-content-center">
+            @foreach (var items in ViewBag.property)
+            {
+               
 
-            <!-- card 1 -->
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="~/Images/Card1.png" class="card-img " alt="photo">
-                    <button class="b-like"><img src="~/Images/like.svg" class="card-img-top" alt="like"></button>
-                    <div class="card-body">
-                        <h5 class="card-title">12.000 ريال</h5>
-                        <p class="card-text">شارع خالد بن الوليد، حي الصفراء، بريدة</p>
-                        <button class="card-button">الإطلاع على التفاصيل</button>
-                    </div>
-                </div>
-            </div>
-            <!-- card 2 -->
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="~/Images/Card2.png" class="card-img " alt="photo">
-                    <button class="b-like"><img src="~/Images/like.svg" class="card-img-top " alt="like"></button>
-                    <div class="card-body">
-                        <h5 class="card-title">14.500 ريال</h5>
-                        <p class="card-text">شارع الملك فهد، حي الفايزية، بريدة</p>
-                        <button class="card-button">الإطلاع على التفاصيل</button>
-                    </div>
-                </div>
-            </div>
-            <!-- card 3 -->
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="~/Images/@items.mainImage" class="card-img " alt="photo">
+                        <button class="b-like"><img src="~/Images/like.svg" class="card-img-top" alt="like"></button>
+                        <div class="card-body">
+                            <h5 class="card-title"> @items.Price ريال</h5>
+                            <p class="card-text">@items.Location</p>
+                            <button class="card-button">
+                                <a asp-action="ViewProperty" asp-route-p="@items.Id">
+                                    الإطلاع على التفاصيل
+                                </a>
 
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="~/Images/Card3.png" class="card-img " alt="photo">
-                    <button class="b-like"><img src="~/Images/like.svg" class="card-img-top " alt="like"></button>
-                    <div class="card-body">
-                        <h5 class="card-title">10.000 ريال</h5>
-                        <p class="card-text">شارع خالد بن الوليد، حي الصفراء، بريدة</p>
-                        <button class="card-button">الإطلاع على التفاصيل</button>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+               
+            }
+            
+           
+            
         <div class="row justify-content-center">
-            <!-- card 1 -->
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="~/Images/Card4.png" class="card-img " alt="photo">
-                    <button class="b-like"><img src="~/Images/red-like.svg" alt="like"></button>
-                    <div class="card-body">
-                        <h5 class="card-title">12.000 ريال</h5>
-                        <p class="card-text">شارع أبو بكر الصديق، حي الصالحية، الرس</p>
-                        <button class="card-button">الإطلاع على التفاصيل</button>
-                    </div>
-                </div>
-            </div>
-            <!-- card 2 -->
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="~/Images/Card5.png" class="card-img " alt="photo">
-                    <button class="b-like"><img src="~/Images/like.svg" class="card-img-top " alt="like"></button>
-                    <div class="card-body">
-                        <h5 class="card-title">16.545 ريال</h5>
-                        <p class="card-text">شارع الملك عبد العزيز، حي النهضة، بريدة </p>
-                        <button class="card-button">الإطلاع على التفاصيل</button>
-                    </div>
-                </div>
-            </div>
-            <!-- card 3 -->
-
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="~/Images/Card2.png" class="card-img " alt="photo">
-                    <button class="b-like"><img src="~/Images/like.svg" class="card-img-top " alt="like"></button>
-                    <div class="card-body">
-                        <h5 class="card-title">14.500 ريال</h5>
-                        <p class="card-text">شارع الملك فهد، حي الفايزية، بريدة</p>
-                        <button class="card-button">الإطلاع على التفاصيل</button>
-                    </div>
-                </div>
-
-            </div>
+           
 
         </div>
         <!-- buttons to navigate -->

@@ -4,14 +4,15 @@ using System.ComponentModel;
 
 namespace RealEstateApp.Models
 {
-    public class User : AuditEntity<Guid>
+    public class User : AuditEntity<string>
     {
 
         [Required]
         public string Name { get; set; }
+        public string userID { get; set; }
 
-       
-       
+
+
         [Required]
         [EmailAddress]
         public string Email { get; set; }

@@ -9,5 +9,8 @@ namespace RealEstateApp.Areas.Identity.Data;
 // Add profile data for application users by adding properties to the authUser class
 public class authUser : IdentityUser
 {
+
+    public string Namee { get; set; }
+    public string phone { get; set; }
 }
 

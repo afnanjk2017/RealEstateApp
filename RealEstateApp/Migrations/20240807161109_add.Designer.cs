@@ -12,8 +12,8 @@ using RealEstateApp.Data;
 namespace RealEstateApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240806193317_first")]
-    partial class first
+    [Migration("20240807161109_add")]
+    partial class add
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -101,8 +101,8 @@ namespace RealEstateApp.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid>("Property_Type_id")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("Property_Type_id")
+                        .HasColumnType("int");
 
                     b.Property<bool?>("SchoolService")
                         .HasColumnType("bit");
@@ -115,8 +115,9 @@ namespace RealEstateApp.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<Guid>("User_id")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("User_id")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool?>("WaterService")
                         .HasColumnType("bit");
@@ -126,8 +127,6 @@ namespace RealEstateApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Property_Type_id");
 
                     b.HasIndex("User_id");
 
@@ -218,9 +217,9 @@ namespace RealEstateApp.Migrations
 
             modelBuilder.Entity("RealEstateApp.Models.User", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("CreationDatetime")
                         .HasColumnType("datetime2");
@@ -266,6 +265,10 @@ namespace RealEstateApp.Migrations
                         .HasColumnType("int")
                         .HasDefaultValue(1);
 
+                    b.Property<string>("userID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Subscription_id");
@@ -294,8 +297,9 @@ namespace RealEstateApp.Migrations
                     b.Property<Guid>("Property_Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("User_Id")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("User_Id")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -308,19 +312,11 @@ namespace RealEstateApp.Migrations
 
             modelBuilder.Entity("RealEstateApp.Models.Property", b =>
                 {
-                    b.HasOne("RealEstateApp.Models.PropertyType", "PropertyType")
-                        .WithMany()
-                        .HasForeignKey("Property_Type_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("RealEstateApp.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("User_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("PropertyType");
 
                     b.Navigation("User");
                 });

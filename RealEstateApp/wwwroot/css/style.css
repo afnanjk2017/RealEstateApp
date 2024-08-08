@@ -7,22 +7,22 @@
 
 @font-face {
     font-family: 'Bold';
-    src: url(../Fonts/FFSHAMELSANS-BOLD\ 1.OTF);
+    src: url(~/Fonts/FFSHAMELSANS-BOLD\ 1.OTF);
 }
 
 @font-face {
     font-family: 'Medium';
-    src: url(../Fonts/FFSHAMELSANS-MEDIUM\ 1.OTF);
+    src: url(~/Fonts/FFSHAMELSANS-MEDIUM\ 1.OTF);
 }
 
 @font-face {
     font-family: 'Normal';
-    src: url(../Fonts/FFShamelSans-Normal.otf);
+    src: url(~/Fonts/FFShamelSans-Normal.otf);
 }
 
 @font-face {
     font-family: 'Logo';
-    src: url(../Fonts/Poppins-Bold.ttf);
+    src: url(~/Fonts/Poppins-Bold.ttf);
 }
 
 body,

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace RealEstateApp.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class update : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -46,7 +46,7 @@ namespace RealEstateApp.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -69,7 +69,6 @@ namespace RealEstateApp.Migrations
                         principalTable: "Subscriptions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-
                 });
 
             migrationBuilder.CreateTable(
@@ -82,7 +81,7 @@ namespace RealEstateApp.Migrations
                     Available = table.Column<bool>(type: "bit", nullable: false),
                     status = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AreaMeters = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Property_Type_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Property_Type_id = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -101,7 +100,7 @@ namespace RealEstateApp.Migrations
                     PetsService = table.Column<bool>(type: "bit", nullable: true),
                     HospitalService = table.Column<bool>(type: "bit", nullable: true),
                     ElectricityService = table.Column<bool>(type: "bit", nullable: true),
-                    User_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    User_id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CreationDatetime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     LastEditDatetime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -110,12 +109,6 @@ namespace RealEstateApp.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Properties", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Properties_PropertyType_Property_Type_id",
-                        column: x => x.Property_Type_id,
-                        principalTable: "PropertyType",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Properties_Users_User_id",
                         column: x => x.User_id,
@@ -152,7 +145,7 @@ namespace RealEstateApp.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    User_Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    User_Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Property_Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreationDatetime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     LastEditDatetime = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -175,11 +168,6 @@ namespace RealEstateApp.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Properties_Property_Type_id",
-                table: "Properties",
-                column: "Property_Type_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Properties_User_id",
@@ -214,13 +202,13 @@ namespace RealEstateApp.Migrations
                 name: "PropertyImages");
 
             migrationBuilder.DropTable(
+                name: "PropertyType");
+
+            migrationBuilder.DropTable(
                 name: "UserLikedProperty");
 
             migrationBuilder.DropTable(
                 name: "Properties");
-
-            migrationBuilder.DropTable(
-                name: "PropertyType");
 
             migrationBuilder.DropTable(
                 name: "Users");

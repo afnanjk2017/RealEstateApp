@@ -1,0 +1,387 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model RealEstateApp.Models.Property
+
+
+
+
+
+<!-- Image slider section -->
+<div class="images-slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <ul>
+                        <!-- List of images in the slider -->
+                        @foreach (var image in ViewBag.images)
+                        {
+                            <li>
+                                <img src="~/Images/@image.Image" class="card-img" height="100" width="120" alt="Property Image">
+                            </li>
+                           
+                        }
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <!-- Full-size image -->
+                <img class="img-fluid" src="~/Images/@Model.mainImage" alt="full-image1">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Arrows section for navigating the slider -->
+<div class="container">
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="arrows">
+                <button class="light-button ">
+                    <img src="~/Images/ArrowLeft.svg" alt="">
+                </button>
+                <button class="dark-button ">
+                    <img src="~/Images/ArrowRight.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Property details section -->
+<div class="container ">
+    <div class="row ">
+        <div class="col-md-10">
+            <div class="title-section">
+                <p class="aqar-name">@Model.Title </p>
+                <p class="aqar-desc"> @Model.Description</p>
+                <a href="#" class="aqar-virtualTour">جولة افتراضية</a>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="price-section">
+                <p class="aqar-price">ريال @Model.Price</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Separator line -->
+<div class="separateLine">
+    <div class="container">
+        <div class="row">
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Property description title -->
+<div class="AqarDescTitle">
+    <div class="container">
+        <div class="row">
+            <div class="title-style">
+                <p>وصف العقار</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Property description section -->
+<div class="AqarDesc">
+    <div class="container">
+        <div class="row row-cols-3 row-cols-lg-4 g-24 g-lg-3 text-center">
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="property-status-desc black-title">حالة العقار</p>
+                    <button class="status-button grey-title">@Model.status</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">نوع العقار</p>
+                    <p class="grey-title">@Model.Property_Type_id</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">المساحة</p>
+                    <p class="grey-title">@Model.AreaMeters</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">عدد الغرف</p>
+                    <p class="grey-title">@Model.NumOfRooms</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">دورات المياه</p>
+                    <p class="grey-title">@Model.NumOfBathrooms</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">نوع العرض</p>
+                    <p class="grey-title">@Model.OfferType</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">الفترة</p>
+                    <p class="grey-title">@Model.OfferPeriod</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">عدد الادوار</p>
+                    <p class="grey-title">@Model.NumOfFloors</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">عمر العقار</p>
+                    <p class="grey-title"> (سنوات) @Model.Age</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">رقم المبنى</p>
+                    <p class="grey-title">18563</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">رقم الصك</p>
+                    <p class="grey-title">87334627</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">الرمز البريدي</p>
+                    <p class="grey-title">@Model.postalNum</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">الموقع</p>
+                    <a href="#" class="grey-title">@Model.Location  </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title">واجهة العقار</p>
+                    <p class="grey-title">@Model.Direction</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title"> رقم الاعلان</p>
+                    <p class="grey-title">1234</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-light custom-rounded">
+                    <p class="black-title"> اخر تحديث</p>
+                    <p class="grey-title">@Model.LastEditDatetime</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Property services title -->
+    <div class="aqar-service-title">
+        <div class="container">
+            <div class="row">
+                <div class="title-style">
+                    <p>خدمات العقار</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Property services section -->
+    <div class="aqar-service">
+        <div class="container">
+            <div class="row row-cols-3 row-cols-lg-4 g-24 g-lg-3  text-center">
+
+                @if (Model.ElectricityService)
+                {
+                    <div class="col-md-3">
+                        <div class="p-4 bg-light custom-rounded">
+                            <img class="service-image" src="~/Images/plug1.png" alt="electric">
+                            <p class="black-title">كهرباء</p>
+                        </div>
+                    </div>
+                }
+                @if (Model.SupermarketService)
+                {
+                    <div class="col-md-3">
+                        <div class="p-4 bg-light custom-rounded">
+                        <img class="service-image" src="~/Images/grocery-cart.png" alt="grocery-cart">
+                        <p class="black-title">سوبرماركت</p>
+                    </div>
+                </div>}
+                @if (Model.ParkingService)
+                {
+                    <div class="col-md-3">
+                        <div class="p-4 bg-light custom-rounded">
+                        <img class="service-image" src="~/Images/parking.png" alt="Parking">
+                        <p class="black-title">مواقف سيارات</p>
+                    </div>
+                </div>}
+                @if (Model.GasStationService)
+                {
+                    <div class="col-md-3">
+                        <div class="p-4 bg-light custom-rounded">
+                        <img class="service-image" src="~/Images/gas-station.png" alt="gas-station">
+                        <p class="black-title">محطة وقود</p>
+                    </div>
+                </div>}
+                @if (Model.HospitalService)
+                {
+                    <div class="col-md-3">
+                        <div class="p-4 bg-light custom-rounded">
+                        <img class="service-image" src="~/Images/hospital.png" alt="hospital">
+                        <p class="black-title">مستشفى</p>
+                    </div>
+                </div>}
+                @if (Model.SchoolService)
+                {
+                    <div class="col-md-3">
+                        <div class="p-4 bg-light custom-rounded">
+                        <img class="service-image" src="~/Images/school.png" alt="school">
+                        <p class="black-title">مدرسة</p>
+                    </div>
+                </div>}
+
+                @if (Model.WaterService)
+                {
+                    <div class="col-md-3">
+                        <div class="p-4 bg-light custom-rounded">
+                        <img class="service-image" src="~/Images/water.png" alt="water">
+                        <p class="black-title">مياه</p>
+                    </div>
+                </div> }
+                @if (Model.PetsService)
+                {
+                    <div class="col-md-3">
+                        <div class="p-4 bg-light custom-rounded">
+                        <img class="service-image" src="~/Images/animal.png" alt="pet">
+                        <p class="black-title">حيوانات اليفة</p>
+                    </div>
+                </div> }
+                }
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--  Contact title -->
+    <div class="contact-info-title">
+        <div class="container">
+            <div class="row">
+                <div class="title-style">
+                    <p>معلومات العقار</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Contact section -->
+    <div class="contact-info ">
+        <div class="container">
+
+
+            <div class="row g-0 ">
+
+                <div class="col-sm-3 col-md-3  ">
+
+                    <div class="p-4  bg-light  " id="border-right">
+                        <p class="grey-title">الاسم</p>
+                        <p class="black-title">@Model.ownerName</p>
+                    </div>
+                </div>
+                <div class="col-3 col-md-3">
+                    <div class="p-4  bg-light  ">
+                        <p class="grey-title"> رقم الجوال</p>
+                        <p class="black-title">@Model.ContactNumber </p>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-4  bg-light">
+                        <p class="grey-title"> الموقع</p>
+                        <p class="black-title">@Model.Location </p>
+                    </div>
+
+
+                </div>
+
+                <div class="col-3 col-md-3">
+                    <div class="p-4  bg-light  " id="border-left">
+                        <p class="grey-title"> رقم المكتب</p>
+                        <p class="black-title">@Model.OfficeNumber </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>

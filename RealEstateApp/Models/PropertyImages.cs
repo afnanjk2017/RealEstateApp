@@ -8,7 +8,7 @@ namespace RealEstateApp.Models
     {
 
         [ForeignKey("Property")]
-        public int Property_Id { get; set; }
+        public Guid Property_Id { get; set; }
 
 
         [Required]

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RealEstateApp.Data;
 
@@ -11,9 +12,11 @@ using RealEstateApp.Data;
 namespace RealEstateApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240807210039_add1")]
+    partial class add1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,13 +34,14 @@ namespace RealEstateApp.Migrations
                     b.Property<int?>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int?>("AreaMeters")
-                        .HasColumnType("int");
+                    b.Property<decimal>("AreaMeters")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<bool>("Available")
                         .HasColumnType("bit");
 
                     b.Property<string>("ContactNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CreationDatetime")
@@ -52,13 +56,13 @@ namespace RealEstateApp.Migrations
                     b.Property<string>("Direction")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("ElectricityService")
+                    b.Property<bool?>("ElectricityService")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("GasStationService")
+                    b.Property<bool?>("GasStationService")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("HospitalService")
+                    b.Property<bool?>("HospitalService")
                         .HasColumnType("bit");
 
                     b.Property<bool?>("IsDeleted")
@@ -68,70 +72,79 @@ namespace RealEstateApp.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Location")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("NumOfBathrooms")
+                    b.Property<int>("NumOfBathrooms")
                         .HasColumnType("int");
 
-                    b.Property<int?>("NumOfFloors")
+                    b.Property<int>("NumOfFloors")
                         .HasColumnType("int");
 
-                    b.Property<int?>("NumOfRooms")
+                    b.Property<int>("NumOfRooms")
                         .HasColumnType("int");
 
                     b.Property<string>("OfferPeriod")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OfferType")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("OfficeNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("ParkingService")
+                    b.Property<bool?>("ParkingService")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("PetsService")
+                    b.Property<bool?>("PetsService")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("Price")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Property_Type_id")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("SchoolService")
+                    b.Property<bool?>("SchoolService")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("SupermarketService")
+                    b.Property<bool?>("SupermarketService")
                         .HasColumnType("bit");
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("User_id")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<bool>("WaterService")
+                    b.Property<bool?>("WaterService")
                         .HasColumnType("bit");
 
-                    b.Property<string>("mainImage")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ownerName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ownerNum")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("postalNum")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("propertyNum")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("status")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

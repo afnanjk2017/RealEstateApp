@@ -8,10 +8,10 @@ namespace RealEstateApp.Models
     {
 
         [ForeignKey("User")]
-        public int User_Id { get; set; }
+        public string User_Id { get; set; }
 
         [ForeignKey("Property")]
-        public int Property_Id { get; set; }
+        public Guid Property_Id { get; set; }
         public virtual User User { get; set; }
         public virtual Property Property { get; set; }
 

@@ -20,10 +20,10 @@
         <form id ="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                 <!-- Name -->
-            <label asp-for="Input.UserName" class="fieldLabel" id="nameLabel"> الاسم<a class="required-star"> *</a></label>
+            <label asp-for="Input.Namee" class="fieldLabel" id="nameLabel"> الاسم<a class="required-star"> *</a></label>
                 <div class="form-floating">
-                <input asp-for="Input.UserName" type="text" id="userName" class="form-input" placeholder="الاسم">
-                <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                <input asp-for="Input.Namee" type="text" id="userName" class="form-input" placeholder="الاسم">
+                <span asp-validation-for="Input.Namee" class="text-danger"></span>
                 </div>
                 <!-- email -->
             <label asp-for="Input.Email" class="fieldLabel" id="emailLabel"> البريد الالكتروني<a class="required-star"> *</a></label>
@@ -32,10 +32,10 @@
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
                 <!-- Phone -->
-            <label asp-for="Input.PhoneNumber"  class="fieldLabel" id="phoneLabel"> رقم الجوال<a class="required-star"> *</a></label>
+            <label asp-for="Input.phone"  class="fieldLabel" id="phoneLabel"> رقم الجوال<a class="required-star"> *</a></label>
                 <div class="form-floating mb-3" dir="ltr">
-                <input asp-for="Input.PhoneNumber"  type="phone" id="phoneField" class="form-input" placeholder="+966 5xxxxxxxx">
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                <input asp-for="Input.phone" pattern="\+966\s5[0-9]{8}" type="phone" id="phoneField" class="form-input" placeholder="+966 5xxxxxxxx">
+                <span asp-validation-for="Input.phone" class="text-danger"></span>
                 </div>
                 <!-- Password -->
             <label asp-for ="Input.Password" class="fieldLabel" id="phoneLabel"> كلمة المرور<a class="required-star"> *</a></label>

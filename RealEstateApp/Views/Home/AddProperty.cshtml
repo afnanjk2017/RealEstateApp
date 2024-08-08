@@ -1,0 +1,241 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Property
+
+@{
+    ViewData["Title"] = "اضافه عقار ";
+}
+<header>
+    <div class="row">
+        <div class="col-md-6 header-content">
+            <div class="header-text">
+                <h1>إضافة عقار جديد</h1>
+                <p>ابحث عن منزلك المثالي للبيع أو الإيجار مع أكبر قاعدة بيانات للعقارات في المنطقة.</p>
+            </div>
+        </div>
+        <div class="col-md-6 property-image">
+            <img src="~/Images/Home.jpg" alt="صورة المدينة" class="city-image">
+        </div>
+    </div>
+</header>
+<main>
+    <form asp-action="AddProperty1" method="post" enctype="multipart/form-data">
+   
+        <h2>البيانات الأساسية للعقار</h2>
+        <div class="form-row">
+            <div class="form-group">
+                <input asp-for="status" value="متوفر" hidden  /> 
+
+                    <label for="" >نوع العرض</label>
+                    <select asp-for ="OfferType" id="property-type" required>
+                    <option value="إيجار">إيجار</option>
+                    <option value="بيع">بيع</option>
+                </select>
+                <span asp-validation-for="OfferType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="">الفترة</label>
+                <select asp-for="OfferPeriod" id="rental-period" required>
+                    <option value="شهري">شهري</option>
+                    <option value="سنوي">سنوي</option>
+                </select>
+                <span asp-validation-for="OfferPeriod" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label for="">آخر تحديث</label>
+                <input asp-for ="LastEditDatetime" type="datetime-local" id="listing-date" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+               
+               
+                <label for="">نوع العقار</label>
+                <input asp-for="Property_Type_id" type="text" id="property-category" placeholder="أدخل نوع العقار" required>
+                <span asp-validation-for="Property_Type_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               
+                <label for="">عنوان العقار</label>
+                <input asp-for="Title" type="text" id="property-address" placeholder="أدخل عنوان العقار" required>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <input asp-for="Available"  value="@true" hidden />
+            <div class="form-group">
+                
+                <label asp-for="AreaMeters">مساحة العقار (بالمتر المربع)</label>
+                <input asp-for="AreaMeters" type="number" id="property-area" placeholder="أدخل مساحة العقار بالمتر المربع" required>
+                <span asp-validation-for="AreaMeters" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+               
+                <label asp-for="Price">سعر العقار</label>
+                <input asp-for="Price" type="number" id="property-price" placeholder="أدخل سعر العقار" required>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            
+            
+            <div class="form-group">
+                <label asp-for="propertyNum">رقم العقار</label>
+                <input asp-for="propertyNum" type="text" id="property-number" placeholder="أدخل رقم العقار" required>
+                <span asp-validation-for="propertyNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="postalNum">الرمز البريدي</label>
+                <input asp-for="postalNum" type="text" id="postal-code" placeholder="أدخل الرمز البريدي" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label asp-for="ownerNum">رقم المالك</label>
+                <input asp-for="ownerNum" type="text" id="owner-number" placeholder="أدخل رقم المالك" required>
+            </div>
+            <div class="form-group">
+                
+               
+                <label asp-for="Age">عمر العقار</label>
+                <input asp-for="Age" type="number" id="property-age" placeholder="أدخل عمر العقار" required> 
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               
+               
+                <label asp-for="Direction">واجهة العقار</label>
+                <input asp-for="Direction" type="text" id="property-direction" placeholder="أدخل واجهة العقار (مثل: شمال، غرب)" required>
+                <span asp-validation-for="Direction" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group number-input">
+               
+                
+                <label asp-for="NumOfRooms">عدد الغرف</label>
+                <input asp-for="NumOfRooms" type="number" id="room-count" min="0" value="0" required>
+                <span asp-validation-for="NumOfRooms" class="text-danger"></span>
+            </div>
+            <div class="form-group number-input">
+               
+                
+                <label asp-for="NumOfBathrooms" >عدد دورات المياه</label>
+                <input asp-for="NumOfBathrooms" type="number" id="bathroom-count" min="0" value="0" required>
+                <span asp-validation-for="NumOfBathrooms" class="text-danger"></span>
+            </div>
+            <div class="form-group number-input">
+                
+               
+                <label asp-for="NumOfFloors">عدد الأدوار</label>
+                <input asp-for="NumOfFloors" type="number" id="floor-count" min="0" value="0" required>
+                <span asp-validation-for="NumOfFloors" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group full-width">
+
+           
+            <label asp-for="Description">وصف العقار</label>
+            <textarea asp-for="Description" id="property-description" rows="6" placeholder="أدخل وصف العقار والأماكن المحيطة به (مستشفى، قرب، مدرسة)" required></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <h2>خدمات العقار</h2>
+        <div class="form-check">
+            <div class="checkbox-group">
+                <label>
+                    <input asp-for="PetsService" type="checkbox" class="form-check-input" /> السماح بالحيوانات الأليفة
+
+@*                     <input class="form-check-input" type="checkbox" name="amenities" value="السماح بالحيوانات الأليفة"> السماح بالحيوانات الأليفة
+ *@               </label>
+                <label>
+                    <input asp-for="ParkingService" type="checkbox" class="form-check-input" /> مواقف سيارات
+
+                </label>
+                <label>
+                    <input asp-for="ElectricityService" type="checkbox" class="form-check-input" /> كهرباء
+
+                </label>
+                <label>
+                    <input asp-for="WaterService" type="checkbox" class="form-check-input" /> مياه
+
+                </label>
+            </div>
+        </div>
+        <h2>خدمات قريبة من العقار</h2>
+        <div class="form-check">
+            <div class="checkbox-group">
+                <label>
+                    <input asp-for="HospitalService" type="checkbox" class="form-check-input" /> مستشفى
+
+                </label>
+                <label>
+                    <input asp-for="SchoolService" type="checkbox" class="form-check-input" /> مدرسة
+
+                  
+               </label>
+                <label>
+                    <input asp-for="GasStationService" type="checkbox" class="form-check-input" /> محلات وقود
+
+                </label>
+                <label>
+                    <input asp-for="SupermarketService" type="checkbox" class="form-check-input" /> سوبر ماركت
+
+                </label>
+            </div>
+        </div>
+
+
+
+         <h2>صور العقار</h2>
+        <div class="image-upload-area">
+            
+            <input type="file" name="PropertyImages" id="PropertyImages" multiple />
+            <img src="~/Images/download.png" alt="Upload Icon" class="upload-icon">
+            <p>استعرض المكتبة لتحميل الصور</p>
+        </div> 
+        <div class="row">
+            <div class="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228822.11976020265!2d43.92342565!3d26.347680999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x157f586683817b77%3A0x5853c1dee3598a61!2z2KjYsdmK2K_YqQ!5e0!3m2!1sar!2ssa!4v1722637443615!5m2!1sar!2ssa " width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </div>
+        <div class="row custom-margin-top justify-content-center">
+
+            <h2>معلومات التواصل</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="ownerName">الاسم كامل</label>
+                    <input asp-for="ownerName" type="text" id="full-name" placeholder="الاسم" required>
+
+                    <label asp-for="Location">الموقع </label>
+                    <input asp-for="Location" type="text" id="location" placeholder="المدينة" required>
+                </div>
+                <div class="form-group">
+                   
+                    
+                    <label asp-for="ContactNumber">رقم الجوال</label>
+                    <input asp-for="ContactNumber" type="text" pattern="\+966\s5[0-9]{8}" id="phone-num" placeholder="+966 5xxxxxxxx" required>
+                    <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    
+                  
+                
+                    <label asp-for="OfficeNumber">رقم المكتب</label>
+                    <input asp-for="OfficeNumber" pattern="\+966\s5[0-9]{8}" type="text" id="phone-off" placeholder="+966 5xxxxxxxx" required>
+                    <span asp-validation-for="OfficeNumber" class="text-danger"></span>
+                </div>
+            </div> 
+            <div class="buttonGroup">
+               
+                
+                <button type="submit" class="but1">إضافة عقار</button>
+                <button id="cancel" class="but2">
+                    <a asp-action="Index">إلغاء</a>
+
+                </button>
+            </div> 
+    </form>
+</main>
